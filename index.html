@@ -202,80 +202,63 @@
   </div>
 </section>
 
-<!-- SECTION 3 - VANITY COLLECTIONS -->
 <section class="py-5">
   <div class="container">
-
-    <!-- Section Heading -->
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">Our Bathroom Vanity Collections</h2>
-      <p class="text-muted mt-2">
-        Explore our range of modern vanity solutions crafted for Indian homes.
-      </p>
-    </div>
-
     <div class="row g-4">
 
       <!-- Card 1 -->
       <div class="col-md-6 col-lg-3">
-        <div class="collection-card h-100 shadow-sm border-0 rounded overflow-hidden">
-          <img src="images/1/1.jpg" class="img-fluid" alt="">
-          <div class="p-3">
-            <h5 class="fw-semibold mb-2">Wall Mounted Vanities</h5>
-            <p class="text-muted small">
-              Sleek, modern vanities that maximise floor space and create a clean, contemporary bathroom look.
+        <div class="overlay-card">
+          <img src="images/1/1.jpg" alt="">
+          <div class="overlay-content">
+            <span class="overlay-number">01</span>
+            <h5>Wall Mounted Vanities</h5>
+            <p>
+              Sleek, modern vanities that maximise floor space and create a clean,
+              contemporary bathroom look.
             </p>
-            <a href="#" class="text-dark fw-semibold text-decoration-none">
-              View Collection →
-            </a>
           </div>
         </div>
       </div>
 
       <!-- Card 2 -->
       <div class="col-md-6 col-lg-3">
-        <div class="collection-card h-100 shadow-sm border-0 rounded overflow-hidden">
-          <img src="images/2/1.jpg" class="img-fluid" alt="">
-          <div class="p-3">
-            <h5 class="fw-semibold mb-2">Floor Mounted Vanities</h5>
-            <p class="text-muted small">
+        <div class="overlay-card">
+          <img src="images/2/1.jpg" alt="">
+          <div class="overlay-content">
+            <span class="overlay-number">02</span>
+            <h5>Floor Mounted Vanities</h5>
+            <p>
               Sturdy and spacious solutions offering generous storage with timeless appeal.
             </p>
-            <a href="#" class="text-dark fw-semibold text-decoration-none">
-              View Collection →
-            </a>
           </div>
         </div>
       </div>
 
       <!-- Card 3 -->
       <div class="col-md-6 col-lg-3">
-        <div class="collection-card h-100 shadow-sm border-0 rounded overflow-hidden">
-          <img src="images/3/1.jpg" class="img-fluid" alt="">
-          <div class="p-3">
-            <h5 class="fw-semibold mb-2">Compact Vanities</h5>
-            <p class="text-muted small">
+        <div class="overlay-card">
+          <img src="images/3/1.jpg" alt="">
+          <div class="overlay-content">
+            <span class="overlay-number">03</span>
+            <h5>Compact Vanities</h5>
+            <p>
               Perfect for small apartments and powder rooms without compromising design.
             </p>
-            <a href="#" class="text-dark fw-semibold text-decoration-none">
-              View Collection →
-            </a>
           </div>
         </div>
       </div>
 
       <!-- Card 4 -->
       <div class="col-md-6 col-lg-3">
-        <div class="collection-card h-100 shadow-sm border-0 rounded overflow-hidden">
-          <img src="images/4/1.jpg" class="img-fluid" alt="">
-          <div class="p-3">
-            <h5 class="fw-semibold mb-2">Luxury Vanities</h5>
-            <p class="text-muted small">
+        <div class="overlay-card">
+          <img src="images/4/1.jpg" alt="">
+          <div class="overlay-content">
+            <span class="overlay-number">04</span>
+            <h5>Luxury Vanities</h5>
+            <p>
               Statement pieces featuring premium finishes and refined detailing.
             </p>
-            <a href="#" class="text-dark fw-semibold text-decoration-none">
-              View Collection →
-            </a>
           </div>
         </div>
       </div>
@@ -284,27 +267,67 @@
   </div>
 </section>
 <style>
-.collection-card img {
+  .overlay-card {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.overlay-card img {
   width: 100%;
-  height: 220px; /* Adjust if needed */
-  object-fit: cover; /* Crop evenly */
-  transition: transform 0.4s ease;
+  height: 320px;
+  object-fit: cover;
 }
 
-.collection-card:hover img {
-  transform: scale(1.05);
+/* dark gradient like screenshot */
+.overlay-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.15),
+    rgba(0,0,0,0)
+  );
 }
 
-.collection-card {
-  background: #fff;
-  transition: all 0.3s ease;
+.overlay-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 20px;
+  z-index: 2;
+  color: #fff;
 }
 
-.collection-card:hover {
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+.overlay-number {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.85;
+  margin-bottom: 6px;
 }
 
+.overlay-content h5 {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
 
+.overlay-content p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* hover zoom like screenshot */
+.overlay-card img {
+  transition: transform 0.5s ease;
+}
+.overlay-card:hover img {
+  transform: scale(1.08);
+}
 </style>
 
 <!-- SECTION 4 - CTA BOX -->
