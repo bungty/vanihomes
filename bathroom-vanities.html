@@ -10,10 +10,14 @@
 
 <!-- Bootstrap 5 CDN -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
 
 <style>
   body {
-    font-family: 'Segoe UI', sans-serif;
+     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   .navbar-brand {
     letter-spacing: 0.5px;
@@ -24,12 +28,15 @@
 <body>
 
 <!-- HEADER / NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-  <div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+
+
+  <div class="container-fluid">
 
     <!-- Logo -->
-    <a class="navbar-brand fw-bold fs-4" href="#">
-      VaniHomes
+    <a class="navbar-brand fw-bold fs-4" href="index.html">
+        <img src="images/mainlogo.png" width="150">
+      <!-- VaniHomes -->
     </a>
 
     <!-- Mobile Toggle -->
@@ -43,7 +50,7 @@
 
         <!-- Home -->
         <li class="nav-item">
-          <a class="nav-link fw-semibold" href="#">Home</a>
+          <a class="nav-link fw-semibold" href="index.html">Home</a>
         </li>
 
         <!-- Bathroom Vanities Dropdown -->
@@ -52,16 +59,16 @@
             Bathroom Vanities
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Wall Mounted Vanities</a></li>
-            <li><a class="dropdown-item" href="#">Floor Mounted Vanities</a></li>
-            <li><a class="dropdown-item" href="#">Compact Vanities</a></li>
-            <li><a class="dropdown-item" href="#">Luxury Vanities</a></li>
+            <li><a class="dropdown-item" href="wall-mounted-vanities.html">Wall Mounted Vanities</a></li>
+            <li><a class="dropdown-item" href="floor-mounted-vanities.html">Floor Mounted Vanities</a></li>
+            <li><a class="dropdown-item" href="compact-vanities.html">Compact Vanities</a></li>
+            <li><a class="dropdown-item" href="luxury-vanities.html">Luxury Vanities</a></li>
           </ul>
         </li>
 
         <!-- About Us -->
         <li class="nav-item">
-          <a class="nav-link fw-semibold" href="#">About Us</a>
+          <a class="nav-link fw-semibold" href="about.html">About Us</a>
         </li>
 
         <!-- Resources & Support Dropdown -->
@@ -70,12 +77,12 @@
             Resources & Support
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">FAQ</a></li>
-            <li><a class="dropdown-item" href="#">Installation & Care Guides</a></li>
-            <li><a class="dropdown-item" href="#">Returns & Refunds</a></li>
-            <li><a class="dropdown-item" href="#">Privacy Policy</a></li>
-            <li><a class="dropdown-item" href="#">Terms & Conditions</a></li>
-            <li><a class="dropdown-item" href="#">Cookie Policy</a></li>
+            <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+            <li><a class="dropdown-item" href="installation-care-guides.html">Installation & Care Guides</a></li>
+            <li><a class="dropdown-item" href="returns-refunds.html">Returns & Refunds</a></li>
+            <li><a class="dropdown-item" href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a class="dropdown-item" href="terms-conditions.html">Terms & Conditions</a></li>
+            <li><a class="dropdown-item" href="cookie-policy.html">Cookie Policy</a></li>
           </ul>
         </li>
 
@@ -85,18 +92,18 @@
             Additional
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Blog</a></li>
-            <li><a class="dropdown-item" href="#">Testimonials</a></li>
-            <li><a class="dropdown-item" href="#">Press & Media</a></li>
-            <li><a class="dropdown-item" href="#">Careers</a></li>
-            <li><a class="dropdown-item" href="#">Contact Us</a></li>
-            <li><a class="dropdown-item" href="#">Sitemap</a></li>
+            <li><a class="dropdown-item" href="blog.html">Blog</a></li>
+            <li><a class="dropdown-item" href="testimonials.html">Testimonials</a></li>
+            <li><a class="dropdown-item" href="press-media.html">Press & Media</a></li>
+            <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            <li><a class="dropdown-item" href="contact-us.html">Contact Us</a></li>
+            <li><a class="dropdown-item" href="sitemap.html">Sitemap</a></li>
           </ul>
         </li>
 
         <!-- CTA Button -->
         <li class="nav-item ms-lg-3">
-          <a href="#" class="btn btn-dark px-3">
+          <a href="contact-us.html" class="btn btn-dark px-3">
             Enquire Now
           </a>
         </li>
@@ -106,18 +113,60 @@
 
   </div>
 </nav>
+<style>
+  /* Transparent navbar over banner */
+.custom-navbar {
+  background: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  z-index: 9999;
+  transition: all 0.35s ease;
+}
+
+/* Nav link white on hero */
+.custom-navbar .nav-link {
+  color: #fff !important;
+}
+
+
+
+/* CTA button style */
+.custom-navbar .btn-dark {
+  background: #fff;
+  color: #000;
+  border: none;
+}
+
+/* On scroll navbar becomes solid */
+.scrolled-navbar {
+  background: #fff !important;
+  backdrop-filter: none;
+}
+
+.scrolled-navbar .nav-link {
+  color: #111 !important;
+}
+
+.scrolled-navbar .navbar-brand img {
+  filter: none;
+}
+</style>
+
+<script>
+window.addEventListener("scroll", function() {
+  const nav = document.querySelector(".custom-navbar");
+  nav.classList.toggle("scrolled-navbar", window.scrollY > 80);
+});
+</script>
 
 <!-- HERO BANNER YOUTUBE VIDEO -->
 <section class="position-relative overflow-hidden hero-section">
 
-  <!-- YouTube Video Background -->
-  <iframe 
-    class="hero-youtube"
-    src="https://www.youtube.com/embed/ScMzIvxBSi4?autoplay=1&mute=1&loop=1&playlist=ScMzIvxBSi4&controls=0&showinfo=0&rel=0"
-    frameborder="0"
-    allow="autoplay; fullscreen"
-    allowfullscreen>
-  </iframe>
+  <!-- Background Image -->
+  <div class="hero-bg-image"></div>
+
+  
 
   <!-- Overlay -->
   <div class="hero-overlay"></div>
@@ -126,25 +175,34 @@
   <div class="hero-content text-center text-white">
     <div class="container">
       <h1 class="fw-bold display-5 mb-3">
-        Bathroom Vanities for Modern Indian Homes
+        Bathroom vanities
       </h1>
       <p class="lead mb-4">
         Premium, space-efficient vanity units designed for modern Indian bathrooms.
       </p>
-      <a href="#" class="btn btn-light btn-lg px-4">
+      <a href="product.html" class="btn btn-light btn-lg px-4">
         Explore the Collection
       </a>
     </div>
   </div>
 
 </section>
-
 <style>
-    .hero-section {
-  height: 85vh;
+  .hero-section {
+  height: 75vh;
   position: relative;
+  background: #000;
 }
 
+/* Background Image (Fallback) */
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  background: url("images/slider-bg-01.jpg") center / cover no-repeat;
+  z-index: 0;
+}
+
+/* YouTube Video */
 .hero-youtube {
   position: absolute;
   top: 50%;
@@ -153,22 +211,26 @@
   height: 120%;
   transform: translate(-50%, -50%);
   pointer-events: none;
+  z-index: 1;
 }
 
+/* Overlay */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to right, rgba(0,0,0,0.65), rgba(0,0,0,0.35));
-  z-index: 1;
+  z-index: 2;
 }
 
+/* Content */
 .hero-content {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   align-items: center;
 }
+
 </style>
 
 <section class="range-intro">
@@ -208,7 +270,7 @@
       <!-- Wall Mounted -->
       <div class="col-md-6">
         <div class="range-card">
-          <img src="https://images.unsplash.com/photo-1600566752734-2a0cd53d5a93?q=80&w=1400" alt="">
+          <img src="images/1/1.jpg" alt="">
           <div class="range-content">
             <h4>Wall Mounted Vanities</h4>
             <p>Ideal for modern homes, wall mounted vanities offer a sleek appearance while making bathrooms feel more spacious.</p>
@@ -220,7 +282,7 @@
               <li>Multiple size and colour options</li>
             </ul>
 
-            <a href="#" class="range-btn">TO THE COLLECTION →</a>
+            <a href="wall-mounted-vanities.html" class="range-btn">TO THE COLLECTION →</a>
           </div>
         </div>
       </div>
@@ -228,7 +290,7 @@
       <!-- Floor Mounted -->
       <div class="col-md-6">
         <div class="range-card">
-          <img src="https://images.unsplash.com/photo-1600566752229-250ed79470f7?q=80&w=1400" alt="">
+          <img src="images/2/1.jpg" alt="">
           <div class="range-content">
             <h4>Floor Mounted Vanities</h4>
             <p>Floor mounted vanities provide stability, ample storage, and a classic aesthetic.</p>
@@ -239,7 +301,7 @@
               <li>Durable finishes for daily use</li>
             </ul>
 
-            <a href="#" class="range-btn">TO THE COLLECTION →</a>
+            <a href="floor-mounted-vanities.html" class="range-btn">TO THE COLLECTION →</a>
           </div>
         </div>
       </div>
@@ -247,7 +309,7 @@
       <!-- Compact -->
       <div class="col-md-6">
         <div class="range-card">
-          <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1400" alt="">
+          <img src="images/3/1.jpg" alt="">
           <div class="range-content">
             <h4>Compact Vanities</h4>
             <p>Compact vanities are tailored for small bathrooms and powder rooms, delivering smart storage without visual clutter.</p>
@@ -259,7 +321,7 @@
               <li>Durable materials suitable for daily use</li>
             </ul>
 
-            <a href="#" class="range-btn">TO THE COLLECTION →</a>
+            <a href="compact-vanities.html" class="range-btn">TO THE COLLECTION →</a>
           </div>
         </div>
       </div>
@@ -267,7 +329,7 @@
       <!-- Luxury -->
       <div class="col-md-6">
         <div class="range-card">
-          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1400" alt="">
+          <img src="images/4/1.jpg" alt="">
           <div class="range-content">
             <h4>Luxury Vanities</h4>
             <p>Luxury vanities from VaniHomes are crafted as statement pieces, combining refined finishes, premium materials, and elegant design.</p>
@@ -279,7 +341,7 @@
               <li>Customisable options for a personalised look</li>
             </ul>
 
-            <a href="#" class="range-btn">TO THE COLLECTION →</a>
+            <a href="luxury-vanities.html" class="range-btn">TO THE COLLECTION →</a>
           </div>
         </div>
       </div>
@@ -469,130 +531,6 @@
 
 
 
-<section class="contact-cta-section">
-  <div class="container">
-    <div class="row g-4">
-
-      <!-- Download Lookbook -->
-      <div class="col-md-4">
-        <div class="cta-card">
-          <img src="https://images.unsplash.com/photo-1600566752229-250ed79470f7?q=80&w=1200" alt="">
-          <h5>Download Our Lookbook</h5>
-          <p>Explore our full range of premium bathroom vanities and discover designs crafted for modern Indian homes.</p>
-          <a href="#" class="cta-link">DOWNLOAD CATALOGUE →</a>
-        </div>
-      </div>
-
-      <!-- Visit Showrooms -->
-      <div class="col-md-4">
-        <div class="cta-card">
-          <img src="https://images.unsplash.com/photo-1600566752734-2a0cd53d5a93?q=80&w=1200" alt="">
-          <h5>Visit Our Showrooms</h5>
-          <p>Schedule a visit to experience our vanities in person and get expert guidance from our bathroom design specialists.</p>
-          <a href="#" class="cta-link">BOOK AN APPOINTMENT →</a>
-        </div>
-      </div>
-
-      <!-- Expert Consultation -->
-      <div class="col-md-4">
-        <div class="cta-card">
-          <img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1200" alt="">
-          <h5>Request an Expert Consultation</h5>
-          <p>Prefer a personal consultation via phone or video? Our experts are ready to help you choose the perfect vanity.</p>
-          <button class="cta-link btn-link" data-bs-toggle="modal" data-bs-target="#consultModal">
-            SCHEDULE CONSULTATION →
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<div class="modal fade" id="consultModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content p-3">
-
-      <div class="modal-header border-0">
-        <h5 class="modal-title">Let’s Find the Right Vanity for Your Space</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-
-      <div class="modal-body">
-        <form>
-
-          <div class="mb-3">
-            <label>Name*</label>
-            <input type="text" class="form-control" required>
-          </div>
-
-          <div class="mb-3">
-            <label>Phone Number*</label>
-            <input type="tel" class="form-control" required>
-          </div>
-
-          <div class="mb-3">
-            <label>Email Address</label>
-            <input type="email" class="form-control">
-          </div>
-
-          <div class="mb-3">
-            <label>Message</label>
-            <textarea class="form-control" rows="3"></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-dark w-100">
-            Submit
-          </button>
-
-        </form>
-      </div>
-
-    </div>
-  </div>
-</div>
-<style>
-    .contact-cta-section {
-  padding: 90px 20px;
-  background: #fff;
-}
-
-.cta-card {
-  text-align: left;
-}
-
-.cta-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 14px;
-  margin-bottom: 16px;
-}
-
-.cta-card h5 {
-  font-weight: 700;
-  margin-bottom: 8px;
-}
-
-.cta-card p {
-  font-size: 14px;
-  color: #777;
-  margin-bottom: 10px;
-}
-
-.cta-link {
-  font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  color: #000;
-  border: none;
-  background: none;
-  padding: 0;
-}
-
-.cta-link:hover {
-  text-decoration: underline;
-}
-</style>
 
 <footer class="vh-footer">
   <div class="container">
@@ -606,9 +544,12 @@
         </p>
 
         <ul class="footer-contact">
-          <li><strong>Address:</strong> Mumbai, Maharashtra, India</li>
-          <li><strong>Email:</strong> info@vanihomes.in</li>
-          <li><strong>Phone:</strong> +91 98765 43210</li>
+          <li><strong>Address:</strong>Nirmala Kunj 1, 28/3, Loni Road,
+Near Kiran Farm House, Opp. IGL CNG Pump,
+Banthla, Ghaziabad, Uttar Pradesh – 201102 </li>
+          <li><strong>Email:</strong>newcreationspace@gmail.com | 
+vanihomes.nci@gmail.com</li>
+          <li><strong>Phone:</strong> +91 92171 79547</li>
         </ul>
 
         <!-- Social Icons -->
@@ -624,10 +565,10 @@
       <div class="col-md-3">
         <h6>Vanities</h6>
         <ul>
-          <li><a href="#">Wall Mounted Vanities</a></li>
-          <li><a href="#">Floor Mounted Vanities</a></li>
-          <li><a href="#">Compact Vanities</a></li>
-          <li><a href="#">Luxury Vanities</a></li>
+          <li><a href="wall-mounted-vanities.html">Wall Mounted Vanities</a></li>
+          <li><a href="floor-mounted-vanities.html">Floor Mounted Vanities</a></li>
+          <li><a href="compact-vanities.html">Compact Vanities</a></li>
+          <li><a href="luxury-vanities.html">Luxury Vanities</a></li>
         </ul>
       </div>
 
@@ -635,10 +576,10 @@
       <div class="col-md-3">
         <h6>Company</h6>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">HTML Sitemap</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="sitemap.html"> Sitemap</a></li>
         </ul>
       </div>
 
@@ -646,13 +587,13 @@
       <div class="col-md-3">
         <h6>For You</h6>
         <ul>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Return & Refunds</a></li>
-          <li><a href="#">Terms & Conditions</a></li>
-          <li><a href="#">Cookie Policy</a></li>
-          <li><a href="#">Career</a></li>
-          <li><a href="#">Contact Us</a></li>
-          <li><a href="#">Partner with Us</a></li>
+          <li><a href="privacy-policy.html">Privacy Policy</a></li>
+          <li><a href="returns-refunds.html">Return & Refunds</a></li>
+          <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+          <li><a href="cookie-policy.html">Cookie Policy</a></li>
+          <li><a href="careers.html">Career</a></li>
+          <li><a href="contact-us.html">Contact Us</a></li>
+          <li><a href="partner-with-us.html">Partner with Us</a></li>
         </ul>
       </div>
 
