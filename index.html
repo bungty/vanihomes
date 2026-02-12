@@ -22,6 +22,7 @@ body {
 }
 .fw-bold{
   font-weight: 400 !important;
+  font-size: 35px;
 }
 
   .navbar-brand {
@@ -235,6 +236,7 @@ window.addEventListener("scroll", function() {
   font-weight: 300 !important;
   letter-spacing: -0.6px;
   line-height: 1.15;
+      font-size: 40px;
 }
 
 .hero-content p {
@@ -353,7 +355,7 @@ window.addEventListener("scroll", function() {
 }
 
 .philosophy-heading {
-  font-size: 48px;
+  font-size: 35px;
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 24px;
@@ -505,6 +507,7 @@ window.addEventListener("scroll", function() {
 .overlay-content h5 {
   font-weight: 400;
   margin-bottom: 8px;
+  font-size: 20px;
 }
 
 .overlay-content p {
@@ -570,13 +573,14 @@ window.addEventListener("scroll", function() {
 .cta-section h2 {
   font-weight: 400;
   margin-bottom: 12px;
+  font-size:35px;
 }
 
 .cta-section p {
   max-width: 720px;
   margin: auto;
   color: #666;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .cta-btn {
@@ -788,6 +792,9 @@ window.addEventListener("scroll", function() {
   color: #c9a347;
   font-weight: 600;
 }
+.lead{
+  font-size:18px;
+}
 
 .why-card {
   position: relative;
@@ -824,6 +831,7 @@ window.addEventListener("scroll", function() {
   font-weight: 400;
   margin-bottom: 12px;
   color: #111;
+  font-size: 20px;
 }
 
 .why-card p {
@@ -881,11 +889,13 @@ window.addEventListener("scroll", function() {
 .partners-section h2 {
   font-weight: 400;
   margin-bottom: 6px;
+  font-size:35px;
 }
 
 .partners-section p {
   color: #777;
   margin-bottom: 30px;
+  font-size:18px;
 }
 
 .logo-slider {
@@ -983,13 +993,13 @@ window.addEventListener("scroll", function() {
 }
 
 .section-title {
-  font-size: 36px;
+  font-size: 35px;
   font-weight: 400;
   letter-spacing: -0.3px;
 }
 
 .section-subtitle {
-  font-size: 15px;
+  font-size: 18px;
   color: #777;
   max-width: 520px;
   margin: 0 auto;
@@ -1015,8 +1025,8 @@ window.addEventListener("scroll", function() {
 }
 
 .blog-content h5 {
-  font-size: 17px;
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 400;
   line-height: 1.4;
   margin-bottom: 10px;
 }
@@ -1080,10 +1090,12 @@ window.addEventListener("scroll", function() {
 
 <script>
   $('.blogs-carousel').owlCarousel({
-    loop: false,
+    loop: true,
     margin: 24,
-    nav: true,
-    dots: true,
+    nav: false,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 3000,
     navText: ['←','→'],
     responsive:{
       0:{
@@ -1160,14 +1172,14 @@ window.addEventListener("scroll", function() {
 }
 
 .contact-cta-alt h2 {
-  font-size: 42px;
+  font-size: 35px;
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 18px;
 }
 
 .contact-cta-alt p {
-  font-size: 15px;
+  font-size: 18px;
   color: #666;
   max-width: 480px;
   line-height: 1.7;
@@ -1396,7 +1408,7 @@ vanihomes.nci@gmail.com</li>
 }
 
 .footer-logo {
-  font-weight: 800;
+  font-weight: 400;
   color: #fff;
   margin-bottom: 12px;
 }
@@ -1432,6 +1444,8 @@ vanihomes.nci@gmail.com</li>
   color: #aaa;
   text-decoration: none;
   transition: 0.2s ease;
+  font-weight: 300;
+    font-size: 15px;
 }
 
 .vh-footer ul li a:hover {
